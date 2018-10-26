@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 66px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+
+.section h2 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h3 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h4 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h5 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h6 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+<nav>
+  
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-inverse">
+      <!-- NOTE: add "navbar-inverse" class for an alternate navbar background -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.stat.ncsu.edu/">
+      <img src="https://brand.ncsu.edu/assets/logos/ncstate-type-2x1-blk-min.png">
+      </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      
+      
+      <ul class="nav navbar-nav navbar-left">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Resources
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li class="nav-item"><a href="https://gmail.ncsu.edu/">Gmail</a></li>
+          <li><a href="https://www.lib.ncsu.edu/">Library</a></li>
+          <li><a href="https://mypack.ncsu.edu/">MyPack</a></li>
+          <li role="separator" class="divider"></li>
+	        <li><a href="https://www.stat.ncsu.edu/computing/R.php">NCSU R</a></li>
+        </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item"><a href="index.html">[Home]</a></li>
+        <li class="nav-item"><a href="publication.html">[Publication]</a></li>
+        <li class="nav-item"><a href="teaching.html">[Teaching]</a></li>
+        <li class="nav-item"><a href="software.html">[Software]</a></li>
+        <!--li class="nav-item"><a href="https://github.com">[Misc. Links]</a></li -->
+      
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" 
+          id="navbarDropdown" role="button" data-toggle="dropdown" 
+          aria-haspopup="true" aria-expanded="false">
+              [Misc. Links]
+              <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li class="nav-item"><a href="aboutR.html">
+              About R</a>
+            </li>
+            <li><a href="MaityCV.html">CV</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+</nav>
+
+<!--nav class="navbar navbar-default navbar-fixed-top" id="navbartop">
+  
+  <div class="container">
+    
+  <div class="navbar-header">
+  
+    <button class="btn btn-default dropdown-toggle" type="button" 
+      id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" 
+      aria-expanded="true">
+        Resources
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="https://gmail.ncsu.edu/">Gmail</a></li>
+      <li><a href="https://www.lib.ncsu.edu/">Library</a></li>
+      <li><a href="https://mypack.ncsu.edu/">MyPack</a></li>
+      <li role="separator" class="divider"></li>
+	    <li><a href="https://www.stat.ncsu.edu/computing/R.php">NCSU R</a></li>
+    </ul>
+    <a class="navbar-brand" href="https://www.stat.ncsu.edu/">
+      <img src="https://brand.ncsu.edu/assets/logos/ncstate-type-2x1-blk-min.png">
+      </a>
+
+    </div> <!-- end div navbar-header-->
+    <!--div class="collapse navbar-collapse" id="#navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    </div> <!-- end collapse -->
+
+
+
+
+<!--/div--> <!-- end div container-->
+
+<!--/nav--> <!--end navbar>
+
+
+
+<!-- nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+    <div class="container">
+
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.stat.ncsu.edu/"><img src="https://brand.ncsu.edu/assets/logos/ncstate-type-2x1-blk-min.png"></a>
+	        </div>
+
+        
+        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+	<ul class="nav navbar-nav navbar-left">
+                
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Resources</b> <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://gmail.ncsu.edu/">Gmail</a></li>
+          <li><a href="https://www.lib.ncsu.edu/">Library</a></li>
+          <li><a href="https://mypack.ncsu.edu/">MyPack</a></li>
+	<li><a href="https://www.stat.ncsu.edu/computing/R.php">NCSU R</a></li>
+
+        </ul>
+      </li>                                
+            </ul>
+
+
+
+            
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="nav-item"><a href="index.html"><b style="font-size:20px">[Home]</b></a></li>
+                
+                <li class="nav-item"><a href="publication.html"><b style="font-size:20px">[Publications]</b></a></li>
+                
+                <li class="nav-item"><a href="teaching.html"><b style="font-size:20px">[Teaching]</b></a></li>
+                
+		<li class="nav-item"><a href="software.html"><b style="font-size:20px">[Software]</b></a></li>
+                
+		<li class="nav-item"><a href="aboutR.html"><b style="font-size:20px">[About R]</b></a></li>
+		
+		<li class="nav-item"><a href="MaityCV.html"><b style="font-size:20px">[Misc. Links]</b></a></li>
+                
+            </ul>
+
+        </div>
+    </div>
+</nav-->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><br></p>
+<p><img src="images/portrait.jpg" style="width:25%; margin-right: 20px;" align="left"></p>
+<div id="arnab-maity" class="section level3">
+<h3>Arnab Maity</h3>
+</div>
+<div id="associate-professor-statistics-ncsu" class="section level3">
+<h3>Associate Professor, Statistics, NCSU</h3>
+<hr>
+<div class="parent">
+<div class="twins">
+<b>Address</b> <br> 5240 SAS Hall, <br> 2311 Stinson Drive, <br> Dept. of Statistics, <br> NC State University, <br> Raleigh, NC 27695, USA. <br>
+</div>
+<div class="twins">
+<strong>Contact</strong> <br> 919-515-1937 <br> amaity [at] ncsu.edu <br> (I check email <strong>once</strong> a day)
+</div>
+</div>
+<p><br><br><br><br><br><br><br><br></p>
+<!--Dr. Maity obtained his Bachelor’s degree in Statistics from Indian Statistical Institute, Calcutta in 2003, and obtained his doctoral degree from Texas A&M University in 2008. He worked as a research fellow during 2008-2010 in the Biostatistics department at Harvard School of Public Health before joining NC State on August, 2010.-->
+<p>Dr. Maity’s primary research areas include Functional data analysis, Kernel machine regression, Semiparametric regression and inference. His research has been applied to many areas including gene and environment studies, environmental epidemiology and epigenetics.</p>
+<p>Dr. Maity received the <a href="http://www.amstat.org/ASA/Your-Career/Awards/Gottfried-E-Noether-Awards.aspx"><strong>Noether Young Scholar Award</strong></a> in 2014, awarded by The American Statistical Association, for outstanding early-career contributions to nonparametric statistics.</p>
+<p><strong>Full Curriculum Vita:</strong> <a href="vita/Arnab_Maity_CV_2018.pdf">[<strong>PDF</strong>]</a> <a href="MaityCV.html">[<strong>HTML</strong>]</a></p>
+<p>Recipient of the <a href="https://ofd.ncsu.edu/awards-and-recognition/thank-a-teacher/"><strong>NCSU Thank-a-Teacher</strong></a> recognition (S2016, F2012, S2012)</p>
+<!--html preserve-->
+<!--div class="alert alert-info">
+<p style="font-size:18px"><b>Full PDF Curriculum Vita <a href="http://www4.stat.ncsu.edu/~maity/vita/Arnab_Maity_CV_2018.pdf">available here</a></b></p>
+<!--/div>
+<div class="alert alert-success"-->
+<!--p style="font-size:18px"><b>Maity Research Group <a href="http://www4.stat.ncsu.edu/~maity/group/">members and research listing available here</a></b></p>
+</div>
+<div class="alert alert-warning">
+<p style="font-size:18px"><b>Currently teaching: <a href="http://www.stat.ncsu.edu/people/maity/courses/ST552/">ST 372: Introduction to Statistical Inference and Regression</a></b></p>
+<p style="font-size:18px"><b> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp; <a href="http://www.stat.ncsu.edu/people/maity/courses/ST705/">ST 705: Linear Models and Variance Components </a></b></p>
+<p style="font-size:18px"><b>Recipient of the <a href="https://ofd.ncsu.edu/awards-and-recognition/thank-a-teacher/">NCSU Thank-a-Teacher</a>  recognition</b>
+(S2016, F2012, S2012)</p>
+</div>
+
+<!--/html preserve-->
+<!--
+'https://www4.stat.ncsu.edu/~maity/css/highlight.min.css', 'https://www4.stat.ncsu.edu/~maity/css/bootstrap.min.css', 'https://www4.stat.ncsu.edu/~maity/css/font-awesome.min.css', 'https://www4.stat.ncsu.edu/~maity/css/academicons.min.css', 'https://www4.stat.ncsu.edu/~maity/css/hugo-academic.css', 'https://www4.stat.ncsu.edu/~maity/css/red.css', "//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono"
+-->
+</div>
+
+<footer class="site-footer" style="font-size: 8px">
+  
+    <div class="container" style="font-size: 8px">
+        <p class="powered-by" style="font-size: 8px">
+          
+          Copyright &copy; 2018 Arnab Maity &middot;  All rights reserved.</p>
+</div>
+
+
+<!--div class="container" style="font-size: 8px">
+        <p class="powered-by" style="font-size: 8px">
+
+<!-- Start of StatCounter Code for Default Guide -->
+<!--script type="text/javascript">
+var sc_project=8704609; 
+var sc_invisible=0; 
+var sc_security="425474c3"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<!--noscript><div class="statcounter"><a title="web analytics" href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/8704609/0/425474c3/0/"
+alt="web analytics"></a></div></noscript-->
+<!-- End of StatCounter Code for Default Guide -->
+<!--a href="http://statcounter.com/p8704609/?guest=1">View My
+Stats</a>
+<br> Installed: 12-Feb-2013
+
+  </p>
+    </div-->
+    
+ </footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
